@@ -1,0 +1,1261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101512">
+    <title>Ezeokafor Joemartin Chinecherem— IT Professional</title>
+    <style>
+        :root {
+            --bg: #101512;
+            --panel: #171e19;
+            --panel2: #1c251f;
+            --line: #2a362e;
+            --text: #eef3ed;
+            --muted: #9ba99e;
+            --green: #b5f36b;
+            --green2: #d7ff9f;
+            --orange: #ffb17b;
+            --radius: 18px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 48px));
+            margin: auto
+        }
+
+        .topbar {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ffffff10
+        }
+
+        .brand {
+            font-weight: 750;
+            letter-spacing: -.04em;
+            font-size: 18px
+        }
+
+        .brand b {
+            color: var(--green)
+        }
+
+        nav {
+            display: flex;
+            gap: 29px;
+            color: #b6c1b8;
+            font-size: 13px
+        }
+
+        nav a:hover {
+            color: var(--green)
+        }
+
+        .top-cta,
+        .button {
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            padding: 10px 15px;
+            font-size: 13px;
+            font-weight: 650
+        }
+
+        .top-cta:hover {
+            border-color: var(--green);
+            color: var(--green)
+        }
+
+        .hero {
+            padding: 72px 0 62px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+            align-items: center
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font: 700 11px/1.4 ui-monospace, SFMono-Regular, monospace;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 9px
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px #b5f36b90
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6.6vw, 76px);
+            letter-spacing: -.075em;
+            line-height: .99;
+            margin: 20px 0
+        }
+
+        .hero h1 span {
+            color: var(--green)
+        }
+
+        .hero-copy {
+            max-width: 490px;
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 26px
+        }
+
+        .button.primary {
+            background: var(--green);
+            color: #13200e;
+            border-color: var(--green)
+        }
+
+        .button.primary:hover {
+            background: var(--green2)
+        }
+
+        .button.ghost {
+            color: #e6eee7
+        }
+
+        .button.ghost:hover {
+            border-color: #68776b
+        }
+
+        .hero-meta {
+            margin-top: 33px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .hero-meta strong {
+            display: block;
+            color: #eef3ed;
+            font-size: 13px;
+            margin-bottom: 3px
+        }
+
+        .portrait-wrap {
+            position: relative;
+            padding: 20px
+        }
+
+        .portrait {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            min-height: 0;
+            border-radius: 16px;
+            border: 1px solid #ffffff18;
+            overflow: hidden;
+            background: linear-gradient(155deg, #29372e, #18221c 65%);
+            position: relative
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block
+        }
+
+        .portrait-placeholder {
+            height: 100%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: #afc0b1;
+            font: 12px ui-monospace, monospace;
+            letter-spacing: .06em
+        }
+
+        .portrait-placeholder span {
+            font-size: 50px;
+            display: block;
+            margin-bottom: 8px;
+            opacity: .7
+        }
+
+        .frame {
+            position: absolute;
+            inset: 8px;
+            border: 1px solid #b5f36b55;
+            border-radius: 13px;
+            pointer-events: none
+        }
+
+        .photo-note {
+            position: absolute;
+            right: 4px;
+            bottom: 2px;
+            color: #a6b3a8;
+            font-size: 10px
+        }
+
+        .side-tag {
+            position: absolute;
+            background: #202b23;
+            border: 1px solid #354438;
+            color: #dce9dc;
+            border-radius: 9px;
+            padding: 10px 13px;
+            font: 11px ui-monospace, monospace;
+            box-shadow: 0 12px 30px #0005
+        }
+
+        .side-tag.one {
+            left: -1px;
+            top: 52px
+        }
+
+        .side-tag.two {
+            right: -2px;
+            bottom: 60px
+        }
+
+        .side-tag b {
+            color: var(--green)
+        }
+
+        .section {
+            padding: 34px 0 58px;
+            border-top: 1px solid #ffffff10
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 24px
+        }
+
+        .section-head h2 {
+            font-size: 25px;
+            letter-spacing: -.045em;
+            margin: 7px 0 0
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 21px
+        }
+
+        .card:hover {
+            border-color: #52624f
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .icon {
+            width: 37px;
+            height: 37px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #354439;
+            border-radius: 10px;
+            color: var(--green);
+            font-size: 17px
+        }
+
+        .mini-label {
+            font: 10px ui-monospace, monospace;
+            color: #8f9e92
+        }
+
+        .card h3 {
+            font-size: 16px;
+            letter-spacing: -.025em;
+            margin: 18px 0 5px
+        }
+
+        .card p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 17px
+        }
+
+        .tag {
+            border: 1px solid #344137;
+            border-radius: 6px;
+            padding: 4px 8px;
+            color: #bdc9be;
+            font-size: 10px
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px
+        }
+
+        .cert {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 17px
+        }
+        
+        .cert-icon {
+            width: 39px;
+            height: 39px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: #28352a;
+            color: var(--green);
+            font-size: 18px
+        }
+
+        .cert h3 {
+            font-size: 13px;
+            margin: 1px 0 3px
+        }
+
+        .cert p {
+            color: var(--muted);
+            font-size: 11px;
+            margin: 0
+        }
+
+        .cert-date {
+            margin-left: auto;
+            color: #aab6ac;
+            font: 10px ui-monospace, monospace;
+            white-space: nowrap
+        }
+
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .skill-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 22px
+        }
+
+        .skill {
+            margin: 18px 0
+        }
+
+        .skill:first-child {
+            margin-top: 0
+        }
+
+        .skill:last-child {
+            margin-bottom: 0
+        }
+
+        .skill-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 8px
+        }
+
+        .skill-line span:last-child {
+            color: var(--green);
+            font: 11px ui-monospace, monospace
+        }
+
+        .track {
+            height: 5px;
+            border-radius: 8px;
+            background: #2c372f;
+            overflow: hidden
+        }
+
+        .fill {
+            height: 100%;
+            border-radius: 8px;
+            background: var(--green)
+        }
+
+        .language {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 5px 12px;
+            margin: 17px 0
+        }
+
+        .language strong {
+            font-size: 12px
+        }
+
+        .language small {
+            font-size: 10px;
+            color: var(--muted)
+        }
+
+        .language .track {
+            grid-column: 1/3
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .project {
+            min-height: 185px;
+            background: linear-gradient(145deg, #1c2820, #151b17);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            flex-direction: column
+        }
+
+        .project-number {
+            color: var(--green);
+            font: 11px ui-monospace, monospace
+        }
+
+        .project h3 {
+            font-size: 15px;
+            margin: 24px 0 6px
+        }
+
+        .project p {
+            font-size: 11px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .project .tags {
+            margin-top: auto;
+            padding-top: 15px
+        }
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1b261d;
+            border: 1px solid #354538;
+            border-radius: 18px;
+            padding: 27px 30px;
+            margin-bottom: 58px
+        }
+
+        .contact h2 {
+            font-size: 21px;
+            letter-spacing: -.04em;
+            margin: 0 0 4px
+        }
+
+        .contact p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .footer {
+            border-top: 1px solid #ffffff10;
+            padding: 20px 0 28px;
+            color: #7f8e82;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .footer span:last-child {
+            font-family: ui-monospace, monospace
+        }
+
+        .edit-hint {
+            color: #728075;
+            font-size: 10px;
+            margin-top: 12px
+        }
+
+        .editable:focus {
+            outline: 1px dashed var(--green);
+            outline-offset: 3px
+        }
+
+
+        .image-tools {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            z-index: 5;
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .upload-btn, .save-btn, .reset-btn {
+            border: 1px solid #50604f;
+            background: #18231b;
+            color: #dce9dc;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .upload-btn:hover, .save-btn:hover, .reset-btn:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .cert {
+            position: relative;
+        }
+
+        .cert-media {
+            width: 86px;
+            height: 62px;
+            flex: 0 0 86px;
+            border-radius: 9px;
+            overflow: hidden;
+            border: 1px solid #354439;
+            background: #202b23;
+            display: grid;
+            place-items: center;
+            color: #819083;
+            font-size: 9px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .cert-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cert-tools {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cert-tools label {
+            cursor: pointer;
+        }
+
+        .cert-tools input, .profile-file-input {
+            display: none;
+        }
+
+        .site-tools {
+            display: flex;
+            gap: 8px;
+            margin: 0 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .status-message {
+            color: var(--green);
+            font-size: 10px;
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+
+        .status-message.show { opacity: 1; }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+            place-items: center;
+            padding: 24px;
+            background: #000b;
+        }
+
+        .modal.open { display: grid; }
+
+        .modal-content {
+            position: relative;
+            max-width: min(900px, 94vw);
+            max-height: 90vh;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .modal-content img {
+            display: block;
+            max-width: 100%;
+            max-height: 82vh;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: var(--panel2);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media(max-width:760px) {
+            .wrap {
+                width: min(100% - 32px, 560px)
+            }
+
+            nav {
+                display: none
+            }
+
+            .mobile-menu {
+                display: inline;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 46px 0 42px
+            }
+
+            .hero h1 {
+                font-size: 58px
+            }
+
+            .portrait-wrap {
+                max-width: 430px;
+                margin: auto;
+                width: 100%
+            }
+
+            .portrait {
+                aspect-ratio: 4 / 3;
+            }
+
+            .hero-meta {
+                gap: 16px
+            }
+
+            .grid,
+            .projects {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .cert-grid,
+            .skills-layout {
+                grid-template-columns: 1fr
+            }
+
+            .section {
+                padding: 30px 0 42px
+            }
+
+            .contact {
+                align-items: flex-start;
+                gap: 20px;
+                flex-direction: column
+            }
+
+            .section-head p {
+                max-width: 125px;
+                text-align: right
+            }
+
+            .cert-date {
+                font-size: 9px
+            }
+        }
+
+        @media(max-width:430px) {
+
+            .grid,
+            .projects {
+                grid-template-columns: 1fr
+            }
+
+            .hero h1 {
+                font-size: 51px
+            }
+
+            .top-cta {
+                padding: 8px 10px
+            }
+
+            .hero-meta {
+                gap: 12px
+            }
+
+            .hero-meta div {
+                font-size: 10px
+            }
+
+            .portrait {
+                aspect-ratio: 4 / 3;
+            }
+
+            .side-tag.one {
+                left: -4px
+            }
+
+            .side-tag.two {
+                right: -4px
+            }
+
+            .cert {
+                padding: 14px
+            }
+
+            .contact-links {
+                flex-wrap: wrap
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <header class="topbar"><a class="brand" href="#home"><b>Portfolio</b></a>
+            <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#certificates">Certificates</a><a
+                    href="#projects">Projects</a></nav><a class="top-cta" href="#contact">Let’s talk ↗</a><span
+                class="mobile-menu">MENU ↘</span>
+        </header>
+        <main id="home">
+            <section class="hero" id="about">
+                <div>
+                    <div class="eyebrow"><i class="dot"></i> IT professional · open to opportunities</div>
+                    <h1>Hi, I’m<br><span contenteditable="true" class="editable">Ezeokafor Joemartin.</span></h1>
+                    <p class="hero-copy editable" contenteditable="true">I make technology work better for
+                        people. I’m an IT professional focused on dependable systems, thoughtful support, and secure,
+                        practical solutions.</p>
+                    <div class="actions"><a class="button primary" href="#projects">Explore my work ↘</a><a
+                            class="button ghost" href="mailto:ezeokaforchinecherem2@gmail.com">Get in touch ↗</a></div>
+                    <div class="hero-meta">
+                        <div><strong>2+ years</strong>Experience</div>
+                        <div><strong>10 projects</strong>Delivered</div>
+                        <div><strong>Remote / onsite</strong>Flexible</div>
+                    </div>
+                </div>
+                <div class="portrait-wrap">
+                    <div class="portrait" id="profilePhotoFrame">
+                        <img id="profilePhoto" src="/PRO/profile.jpg" alt="Profile photo">
+                        <div class="frame"></div>
+                        <div class="image-tools">
+                            <!-- <label class="upload-btn" for="profileUpload">Change photo</label> -->
+                            <input class="profile-file-input" id="profileUpload" type="file" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="side-tag one">✳ &nbsp;Building things that <b>work.</b></div>
+                    <div class="side-tag two">⌘ &nbsp;IT · SUPPORT · SYSTEMS</div>
+                    <div class="photo-note">PHOTO AREA · 4:3</div>
+                </div>
+            </section>
+            <section class="section" id="skills">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">01 / What I do</div>
+                        <h2>Technical skills</h2>
+                    </div>
+                    
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="icon">⌘</div><span class="mini-label">CORE SKILL 01</span>
+                        </div>
+                        <h3 contenteditable="true" class="editable">IT Support & Troubleshooting</h3>
+                        <p contenteditable="true" class="editable">Hands-on support for users, devices, and everyday
+                            technical issues.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">Help desk</span><span class="tag"
+                                contenteditable="true">Windows</span><span class="tag"
+                                contenteditable="true">Hardware</span></div>
+                    </article>
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="icon">⌁</div><span class="mini-label">CORE SKILL 02</span>
+                        </div>
+                        <h3 contenteditable="true" class="editable">Networking & Infrastructure</h3>
+                        <p contenteditable="true" class="editable">Setting up reliable connections, networks, and core
+                            IT services.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">TCP/IP</span><span class="tag"
+                                contenteditable="true">Wi-Fi</span><span class="tag" contenteditable="true">System
+                                admin</span></div>
+                    </article>
+                    <article class="card">
+                        <div class="card-top">
+                            <div class="icon">&lt;/&gt;</div><span class="mini-label">CORE SKILL 03</span>
+                        </div>
+                        <h3 contenteditable="true">Web Development</h3>
+                        <p contenteditable="true" >Creating responsive, user-friendly websites using modern web technologies.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">HTML, CSS, JavaScript</span><span class="tag"
+                                contenteditable="true">React</span><span class="tag"
+                                contenteditable="true">Tailwind CSS</span></div>
+                    </article>
+                </div>
+            </section>
+            <section class="section" id="certificates">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">02 / Learning & credentials</div>
+                        <h2>Certificates</h2>
+                    </div>
+                   
+                </div>
+                <div class="cert-grid">
+                    <article class="cert" data-cert="comptia-a-certification"> 
+                        <div class="cert-media" data-cert-view title="Click to enlarge">
+                            <span class="cert-placeholder">CERTIFICATE<br>IMAGE</span>
+                        </div>
+                        <div class="cert-icon">&lt;/&gt;</div>
+                        <div>
+                            <h3 contenteditable="true" >Web Development.</h3>
+                            <p contenteditable="true" >JOBITECH DIPLOMA</p>
+                            <div class="cert-tools">
+                                <label class="upload-btn">Add certificate image<input class="cert-upload" type="file" accept="image/*"></label>
+                            </div>
+                        </div><span class="cert-date" contenteditable="true">Awaiting</span>
+                    </article>
+                    <!-- <article class="cert2" data-cert="google-it-support-profes">
+                        <div class="cert-media" data-cert-view title="Click to enlarge">
+                            <span class="cert-placeholder">CERTIFICATE<br>IMAGE</span>
+                        </div>
+                        <div class="cert-icon">◈</div>
+                        <div>
+                            <h3 contenteditable="true" class="editable">Google IT Support Professional</h3>
+                            <p contenteditable="true" class="editable">Google / Coursera · Credential ID: ADD ID</p>
+                            <div class="cert-tools">
+                                <label class="upload-btn">Add certificate image<input class="cert-upload" type="file" accept="image/*"></label>
+                            </div>
+                        </div><span class="cert-date" contenteditable="true">2024</span>
+                    </article> -->
+                    <!-- <article class="cert" data-cert="networking-fundamentals">
+                        <div class="cert-media" data-cert-view title="Click to enlarge">
+                            <span class="cert-placeholder">CERTIFICATE<br>IMAGE</span>
+                        </div>
+                        <div class="cert-icon">⌁</div>
+                        <div>
+                            <h3 contenteditable="true" class="editable">Networking Fundamentals</h3>
+                            <p contenteditable="true" class="editable">ISSUING ORGANIZATION · Credential ID: ADD ID</p>
+                            <div class="cert-tools">
+                                <label class="upload-btn">Add certificate image<input class="cert-upload" type="file" accept="image/*"></label>
+                            </div>
+                        </div><span class="cert-date" contenteditable="true">2024</span>
+                    </article> -->
+                    <article class="cert" data-cert="add-another-certificate">
+                        <div class="cert-media" data-cert-view title="Click to enlarge">
+                            <span class="cert-placeholder">CERTIFICATE<br>IMAGE</span>
+                        </div>
+                        <div class="cert-icon">⛨</div>
+                        <div>
+                            <h3 contenteditable="true" >Networking Certification</h3>
+                            <p contenteditable="true" >CISCO CERTIFICATION
+                            </p>
+                            <div class="cert-tools">
+                                <label class="upload-btn">Add certificate image<input class="cert-upload" type="file" accept="image/*"></label>
+                            </div>
+                        </div><span class="cert-date" contenteditable="true">AWAITING</span>
+                    </article>
+                </div>
+                <div class="site-tools">
+                    <button class="save-btn" id="addCertificate" type="button">+ Add certificate</button>
+                    <button class="save-btn" id="saveSite" type="button">Save my changes</button>
+                    <button class="reset-btn" id="resetSite" type="button">Reset saved changes</button>
+                    <span class="status-message" id="saveStatus">Saved locally ✓</span>
+                </div>
+              
+            </section>
+            <section class="section">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">03 / Confidence & communication</div>
+                        <h2>Skills & languages</h2>
+                    </div>
+                    
+                </div>
+                <div class="skills-layout">
+                    <div class="skill-card">
+                        <div class="mini-label" style="margin-bottom:20px">TECHNICAL PROFICIENCY</div>
+                        <div class="skill">
+                            <div class="skill-line"><span contenteditable="true">Technical support</span><span
+                                    contenteditable="true">90%</span></div>
+                            <div class="track">
+                                <div class="fill" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-line"><span contenteditable="true">Networking</span><span
+                                    contenteditable="true">82%</span></div>
+                            <div class="track">
+                                <div class="fill" style="width:82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-line"><span contenteditable="true">System administration</span><span
+                                    contenteditable="true">78%</span></div>
+                            <div class="track">
+                                <div class="fill" style="width:78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-line"><span contenteditable="true">Cybersecurity</span><span
+                                    contenteditable="true">45%</span></div>
+                            <div class="track">
+                                <div class="fill" style="width:45%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-line"><span contenteditable="true">Web Development</span><span
+                                    contenteditable="true">90%</span></div>
+                            <div class="track">
+                                <div class="fill" style="width:90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="mini-label" style="margin-bottom:20px">LANGUAGES</div>
+                        <div class="language"><strong contenteditable="true">English</strong><small
+                                contenteditable="true">Fluent · 95%</small>
+                            <div class="track">
+                                <div class="fill" style="width:95%"></div>
+                            </div>
+                        </div>
+                        <div class="language"><strong contenteditable="true">Spanish</strong><small
+                                contenteditable="true">Intermediate · 50%</small>
+                            <div class="track">
+                                <div class="fill" style="width:50%"></div>
+                            </div>
+                        </div>
+                        <div class="language"><strong contenteditable="true">Igbo</strong><small
+                                contenteditable="true">Native · 100%</small>
+                            <div class="track">
+                                <div class="fill" style="width:100%"></div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="projects">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">04 / Selected work</div>
+                        <h2>Projects & experience</h2>
+                    </div>
+        
+                </div>
+                <div class="projects">
+                    <article class="project"><span class="project-number">PROJECT / 01</span>
+                        <h3 contenteditable="true">Office Network Refresh</h3>
+                        <p contenteditable="true">Planned and configured an office network upgrade, improving coverage
+                            and making connections more reliable.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">Networking</span><span class="tag"
+                                contenteditable="true">Infrastructure</span></div>
+                    </article>
+                    <article class="project"><span class="project-number">PROJECT / 02</span>
+                        <h3 contenteditable="true">Help Desk Knowledge Base</h3>
+                        <p contenteditable="true">Created a clear troubleshooting guide that helped teammates resolve
+                            common support requests faster.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">Documentation</span><span class="tag"
+                                contenteditable="true">IT support</span></div>
+                    </article>
+                    <article class="project"><span class="project-number">PROJECT / 03</span>
+                        <h3 contenteditable="true">Responsive Web Development</h3>
+                        <p contenteditable="true">Designed and implemented responsive web solutions that adapt to different screen sizes and devices.</p>
+                        <div class="tags"><span class="tag" contenteditable="true">Web Development</span><span class="tag"
+                                contenteditable="true">Responsive Design</span></div>
+                    </article>
+                </div>
+            </section>
+            <section class="contact" id="contact">
+                <div>
+                    <div class="eyebrow" style="margin-bottom:10px">Have a role or project in mind?</div>
+                    <h2>Let’s solve something together.</h2>
+                    
+                </div>
+                <div class="contact-links"><a class="button primary" href="mailto:ezeokaforchinecherem2@gmail.com">Get in touch
+                        ↗</a><a class="button ghost" href="#home">Back to top ↑</a></div>
+            </section>
+        </main>
+        <footer class="footer"><span>© 2025 Ezeokafor Joemartin · IT Professional</span><span>DESIGNED TO KEEP IT MINIMAL
+                ↗</span></footer>
+    </div>
+
+    <div class="modal" id="imageModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
+            <img id="modalImage" src="" alt="Certificate preview">
+        </div>
+    </div>
+
+    <script>
+    (() => {
+        const STORAGE_KEY = 'joemartinPortfolioV2';
+        const $ = (selector, root = document) => root.querySelector(selector);
+        const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+        // Mobile navigation.
+        const menu = $('.mobile-menu');
+        const nav = $('nav');
+        if (menu && nav) {
+            menu.addEventListener('click', () => {
+                const open = nav.classList.toggle('mobile-open');
+                nav.style.display = open ? 'flex' : '';
+                nav.style.flexDirection = 'column';
+                nav.style.position = open ? 'absolute' : '';
+                nav.style.right = open ? '24px' : '';
+                nav.style.top = open ? '68px' : '';
+                nav.style.padding = open ? '14px' : '';
+                nav.style.background = open ? '#171e19' : '';
+                nav.style.border = open ? '1px solid #2a362e' : '';
+                nav.style.borderRadius = open ? '12px' : '';
+                nav.style.zIndex = open ? '50' : '';
+            });
+        }
+
+        // Profile image uploader with local persistence.
+        const profileUpload = $('#profileUpload');
+        const profilePhoto = $('#profilePhoto');
+        profileUpload?.addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                profilePhoto.src = reader.result;
+                saveState(false);
+                showStatus('Profile photo saved locally ✓');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        function bindCertificateCard(card, index) {
+            const input = $('.cert-upload', card);
+            const media = $('.cert-media', card);
+            input?.addEventListener('change', e => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = () => {
+                    media.innerHTML = `<img src="${reader.result}" alt="Certificate ${index + 1}">`;
+                    saveState(false);
+                    showStatus(`Certificate ${index + 1} image saved locally ✓`);
+                };
+                reader.readAsDataURL(file);
+            });
+            media?.addEventListener('click', () => {
+                const img = $('img', media);
+                if (img) openModal(img.src, img.alt);
+            });
+        }
+
+        // Certificate image uploaders.
+        $$('.cert').forEach((card, index) => bindCertificateCard(card, index));
+
+        $('#addCertificate')?.addEventListener('click', () => {
+            const grid = $('.cert-grid');
+            if (!grid) return;
+            const index = grid.querySelectorAll('.cert').length + 1;
+            const card = document.createElement('article');
+            card.className = 'cert';
+            card.dataset.cert = 'new-certificate-' + index;
+            card.innerHTML = `
+                <div class="cert-media" data-cert-view title="Click to enlarge"><span class="cert-placeholder">CERTIFICATE<br>IMAGE</span></div>
+                <div class="cert-icon">✦</div>
+                <div>
+                    <h3 contenteditable="true" class="editable">New Certificate</h3>
+                    <p contenteditable="true" class="editable">Issuing organization · Credential ID: ADD ID</p>
+                    <div class="cert-tools">
+                        <label class="upload-btn">Add certificate image<input class="cert-upload" type="file" accept="image/*"></label>
+                    </div>
+                </div>
+                <span class="cert-date editable" contenteditable="true">YEAR</span>`;
+            grid.appendChild(card);
+            bindCertificateCard(card, index - 1);
+            showStatus('New certificate added. Edit its details and upload its image.');
+        });
+
+        // Certificate lightbox.
+        const modal = $('#imageModal');
+        const modalImage = $('#modalImage');
+        const modalClose = $('#modalClose');
+        function openModal(src, alt) {
+            modalImage.src = src;
+            modalImage.alt = alt || 'Image preview';
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+        function closeModal() {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            modalImage.src = '';
+        }
+        modalClose?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // Save editable text + image data to this browser.
+        function getState() {
+            return {
+                text: $$('.editable').map((el, i) => ({ i, value: el.textContent })),
+                profile: profilePhoto?.src || '',
+                certificates: $$('.cert').map(card => {
+                    const img = $('img', card.querySelector('.cert-media'));
+                    return img ? img.src : '';
+                })
+            };
+        }
+
+        function saveState(show = true) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+                if (show) showStatus('Saved locally ✓');
+            } catch (err) {
+                showStatus('Storage limit reached. Use smaller images.');
+            }
+        }
+
+        function loadState() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+                if (!saved) return;
+                const editable = $$('.editable');
+                (saved.text || []).forEach(item => {
+                    if (editable[item.i]) editable[item.i].textContent = item.value;
+                });
+                if (saved.profile && profilePhoto) profilePhoto.src = saved.profile;
+                (saved.certificates || []).forEach((src, i) => {
+                    if (!src || !$$('.cert')[i]) return;
+                    const media = $('.cert-media', $$('.cert')[i]);
+                    media.innerHTML = `<img src="${src}" alt="Certificate ${i + 1}">`;
+                });
+            } catch (err) {
+                console.warn('Could not load saved portfolio state.', err);
+            }
+        }
+
+        function showStatus(message) {
+            const status = $('#saveStatus');
+            if (!status) return;
+            status.textContent = message;
+            status.classList.add('show');
+            clearTimeout(showStatus.timer);
+            showStatus.timer = setTimeout(() => status.classList.remove('show'), 2200);
+        }
+
+        $('#saveSite')?.addEventListener('click', () => saveState(true));
+        $('#resetSite')?.addEventListener('click', () => {
+            if (!confirm('Reset the saved browser changes for this portfolio?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            location.reload();
+        });
+
+        // Keep progress bars synchronized when a percentage is edited.
+        $$('.skill-line').forEach(line => {
+            const percent = line.querySelector('span:last-child');
+            const fill = line.parentElement.querySelector('.fill');
+            percent?.addEventListener('input', () => {
+                const value = Math.max(0, Math.min(100, parseInt(percent.textContent) || 0));
+                fill.style.width = value + '%';
+            });
+        });
+
+        // Close mobile navigation after clicking a link.
+        $$('#home nav a, nav a').forEach(link => link.addEventListener('click', () => {
+            if (nav?.classList.contains('mobile-open')) menu.click();
+        }));
+
+        loadState();
+    })();
+    </script>
+
+</body>
+
+</html>
